@@ -11,19 +11,32 @@
 using namespace std;
 
 #define MAX 20
-#define INF 1000
+#define INF 3000
 
 typedef unordered_map<string, int> umap;
 
 class Graph {
-public:
-    static umap Vertex;
+private:
+    static umap Vertex2Seq;
+    static string Seq2Vertex[MAX];
     static int path[MAX][MAX];
     static int heu[MAX];
-    static bool visited[MAX];
+    bool visited[MAX];
+
+public:
     static void init();
 
+    Graph();
+
     int getDis(string a, string b);
+
+    void setVisited(int n);
+    void setVisited(string n);
+
+    bool isVisited(int n);
+    bool isVisited(string n);
+
+    string getFirstUnvisited(string from, string child);
 };
 
 
