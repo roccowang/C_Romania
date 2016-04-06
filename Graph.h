@@ -31,12 +31,20 @@ public:
     int getDis(string a, string b);
 
     void setVisited(int n);
+
     void setVisited(string n);
 
+    void setUnvisited();
+
     bool isVisited(int n);
+
     bool isVisited(string n);
 
     string getFirstUnvisited(string from, string child);
+
+    int getHeu(string n);
+
+    int myGetHeu(string n);
 };
 
 

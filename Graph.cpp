@@ -78,6 +78,11 @@ void Graph::setVisited(string n) {
     visited[Vertex2Seq[n]] = true;
 }
 
+void Graph::setUnvisited() {
+    for (int i = 0; i < MAX; i++)
+        visited[i] = false;
+}
+
 bool Graph::isVisited(int n) {
     return visited[n];
 }
@@ -89,14 +94,24 @@ bool Graph::isVisited(string n) {
 string Graph::getFirstUnvisited(string from, string child) {
     int i = Vertex2Seq[from];
     int start;
-    if (!child.empty())
+    if (child.empty())
         start = 0;
     else
-        start = Vertex2Seq[child];
+        start = Vertex2Seq[child] + 1;
+    if (start >= MAX)
+        return "";
     for (int j = start; j < MAX; j++) {
         if (path[i][j] < INF && path[i][j] != 0 && !visited[j]) {
             return Seq2Vertex[j];
         }
     }
     return "";
+}
+
+int Graph::getHeu(string n) {
+    return heu[Vertex2Seq[n]];
+}
+
+int Graph::myGetHeu(string n) {
+    return heu[Vertex2Seq[n]] + 183;
 }
