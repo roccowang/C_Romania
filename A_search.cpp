@@ -5,9 +5,10 @@
 #include "A_search.h"
 #include <queue>
 
-A_search::A_search(Graph *graph) : uniform_cost(graph) {
+A_search::A_search(Graph *graph, bool _DEBUG) : uniform_cost(graph) {
     title = "A_search:";
     calc = &A_cost_calc;
+    DEBUG = _DEBUG;
 }
 
 //void A_search::uniform_cost_search(string from, string to) {
@@ -32,5 +33,7 @@ A_search::A_search(Graph *graph) : uniform_cost(graph) {
 //}
 
 int A_search::A_cost_calc(node current, string child, Graph *g) {
+    if (current.name == "begin")
+        return g->getHeu(child);
     return current.cost - g->getHeu(current.name) + g->getDis(current.name, child) + g->getHeu(child);
 }

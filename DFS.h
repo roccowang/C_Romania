@@ -15,12 +15,18 @@ class DFS {
 private:
     Graph *g;
     deque<string> solution;
+    bool DEBUG;
 public:
-    DFS(Graph *graph);
+    DFS(Graph *graph, bool _DEBUG = false);
 
+    //无递归DFS,主要利用了栈
     void DFS_nonRecursive(string start, string goal);
 
     void output();
+
+    void debug_output(string name, string type);
+
+    void setDebug(bool _debug = false);
 };
 
 

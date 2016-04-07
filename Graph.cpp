@@ -111,7 +111,3 @@ string Graph::getFirstUnvisited(string from, string child) {
 int Graph::getHeu(string n) {
     return heu[Vertex2Seq[n]];
 }
-
-int Graph::myGetHeu(string n) {
-    return heu[Vertex2Seq[n]] + 183;
-}

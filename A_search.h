@@ -8,9 +8,13 @@
 
 #include "uniform_cost.h"
 
+//继承一致代价搜索
 class A_search : public uniform_cost {
 public:
-    A_search(Graph *graph);
+    //在构造函数中重载calc函数指针,指向下面的计算函数
+    A_search(Graph *graph, bool _DEBUG = false);
+
+    //A*搜索的cost计算函数
     static int A_cost_calc(node current, string child, Graph *g);
 };
 

@@ -5,8 +5,8 @@ Oradea Sibiu 151
 Arad Timisoara 118
 Timisoara Lugoj 111
 Lugoj Mehadia 70
-Mehadia Drobeta 75
-Drobeta Craiova 120
+Mehadia Dobreta 75
+Dobreta Craiova 120
 Craiova Rimnicu_Vilcea 146
 Rimnicu_Vilcea Sibiu 80
 Rimnicu_Vilcea Pitesti 97

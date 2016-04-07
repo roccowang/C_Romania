@@ -34,6 +34,7 @@ public:
 
     void setVisited(string n);
 
+    //将所有节点设为未访问
     void setUnvisited();
 
     bool isVisited(int n);
@@ -42,9 +43,9 @@ public:
 
     string getFirstUnvisited(string from, string child);
 
+    //获取启发函数修正后的cost
+    //直线距离
     int getHeu(string n);
-
-    int myGetHeu(string n);
 };
 
 
