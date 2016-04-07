@@ -16,7 +16,7 @@ using namespace std;
 typedef unordered_map<string, int> umap;
 
 class Graph {
-public:
+private:
     static umap Vertex2Seq;
     static string Seq2Vertex[MAX];
     static int path[MAX][MAX];
