@@ -11,7 +11,7 @@
 //与A_search类似
 class myA_search : public uniform_cost {
 public:
-    myA_search(Graph *graph);
+    myA_search(Graph *graph, bool _DEBUG = false);
 
     static int myA_cost_calc(node current, string child, Graph *g);
 };

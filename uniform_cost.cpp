@@ -28,8 +28,10 @@ void uniform_cost::uniform_cost_search(string from, string to) {
     string child = "";
     while (!heap.empty()) {
         current = heap.top();
-        debug_output(current.name, current.cost, "visit");
-        solution.push_back(make_pair(current.name, current.parent));
+        if (!g->isVisited(current.name)) {
+            solution.push_back(make_pair(current.name, current.parent));
+            debug_output(current.name, current.cost, "visit");
+        }
         if (current.name == to)
             break;
         g->setVisited(current.name);

@@ -16,7 +16,7 @@ using namespace std;
 typedef unordered_map<string, int> umap;
 
 class Graph {
-private:
+public:
     static umap Vertex2Seq;
     static string Seq2Vertex[MAX];
     static int path[MAX][MAX];
@@ -24,8 +24,10 @@ private:
     bool visited[MAX];
 
 public:
+    //静态变量初始化,从文件中读取
     static void init();
 
+    //非静态变量初始化
     Graph();
 
     int getDis(string a, string b);
